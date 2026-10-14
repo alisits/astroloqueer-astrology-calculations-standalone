@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "queerstrology-ephemeris"
+version = "0.1.0"
+description = "Swiss Ephemeris house cusp, Ascendant, and Midheaven calculations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-2.0-or-later" }
+dependencies = [
+    "pyswisseph==2.10.3.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+queerstrology-ephemeris-demo = "queerstrology_ephemeris.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
